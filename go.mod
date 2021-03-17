@@ -1,4 +1,4 @@
-module github.com/RyanCallahan312/go-plotly-clone-clone
+module github.com/RyanCallahan312/go-plotly-clone
 
 go 1.13
 
