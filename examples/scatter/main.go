@@ -3,8 +3,8 @@ package main
 import (
 	"math"
 
-	grob "github.com/RyanCallahan312/go-plotly/graph_objects"
-	"github.com/RyanCallahan312/go-plotly/offline"
+	grob "github.com/RyanCallahan312/go-plotly-clone/graph_objects"
+	"github.com/RyanCallahan312/go-plotly-clone/offline"
 )
 
 func main() {

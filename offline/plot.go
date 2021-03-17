@@ -9,7 +9,7 @@ import (
 	"os"
 	"text/template"
 
-	grob "github.com/RyanCallahan312/go-plotly/graph_objects"
+	grob "github.com/RyanCallahan312/go-plotly-clone/graph_objects"
 	"github.com/pkg/browser"
 )
 
