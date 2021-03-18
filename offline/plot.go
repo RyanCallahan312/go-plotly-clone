@@ -19,18 +19,18 @@ type Options struct {
 
 // ToHtml saves the figure as standalone HTML. It still requires internet to load plotly.js from CDN.
 func ToHtml(fig *grob.Fig, path string) {
-	buf := figToBuffer(fig)
+	buf := FigToBuffer(fig)
 	ioutil.WriteFile(path, buf.Bytes(), os.ModePerm)
 }
 
 // Show displays the figure in your browser.
 // Use serve if you want a persistent view
 func Show(fig *grob.Fig) {
-	buf := figToBuffer(fig)
+	buf := FigToBuffer(fig)
 	browser.OpenReader(buf)
 }
 
-func figToBuffer(fig *grob.Fig) *bytes.Buffer {
+func FigToBuffer(fig *grob.Fig) *bytes.Buffer {
 	figBytes, err := json.Marshal(fig)
 	if err != nil {
 		panic(err)
@@ -57,7 +57,7 @@ func Serve(fig *grob.Fig, opt ...Options) {
 		Addr:    opts.Addr,
 	}
 	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		buf := figToBuffer(fig)
+		buf := FigToBuffer(fig)
 		buf.WriteTo(w)
 	})
 
